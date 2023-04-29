@@ -4,6 +4,24 @@
 
 <h1>New Task</h1>
 
+<!-- validation check -->
+@if($errors->any())
+    <!-- we have errors -->
+    <div class="alert alert-danger" role="alert">
+  
+
+    <ul>
+    @foreach($errors->all() as $error)
+    <li>
+        {{$error}}
+    </li>
+    
+    @endforeach
+    </ul>
+    </div>
+
+@endif
+
 <form action="/tasks" method="POST">
     <div class="form-group">
         @csrf

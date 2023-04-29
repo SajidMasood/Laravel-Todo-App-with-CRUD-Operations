@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            //
+            $table -> timestamp('completed_at') ->nullable();
         });
     }
 
@@ -23,6 +23,7 @@ return new class extends Migration
     {
         Schema::table('tasks', function (Blueprint $table) {
             //
+            $table ->dropColumn(['completed_at']);
         });
     }
 };
